@@ -3,32 +3,29 @@
 */
 
 
-skrollr.init({
-    smoothScrolling: true,
-    forceHeight: false
+window.addEventListener("load",function() {
+    // Set a timeout...
+    setTimeout(function(){
+        // Hide the address bar!
+        window.scrollTo(0, 1);
+    }, 0);
 });
 
-var maxWidth = $(window).width();
-var maxHeight = $(window).height();
+
+skrollr.init({
+    smoothScrolling: true,
+    forceHeight: true
+});
 
 $(document).ready(function(){
-    $('.welcome, .intro, .sign-up').css({
-        width: maxWidth,
-        height: maxHeight
-    });
+    $('.welcome').containerHasWinSize();
+    $('.intro').containerHasWinSize();
+    $('.sign-up').containerHasWinSize();
 });
 
 // // Only Preform after full page has loaded
 $(window).load(function() {
     // Load functions here.
-    // imgScrollFade();
-    var maxWidth = $(window).width();
-    var maxHeight = $(window).height();
-    
-    $('.welcome, .intro, .sign-up').css({
-        width: maxWidth,
-        height: maxHeight
-    });
 });
 
 
@@ -37,13 +34,10 @@ var resizeTimeout;
 window.onresize = function() {
     clearTimeout(resizeTimeout);
     // handle normal resize
-    var maxWidth = $(window).width();
-    var maxHeight = $(window).height();
 
-    $('.welcome, .intro, .sign-up').css({
-        width: maxWidth,
-        height: maxHeight
-    });
+    $('.welcome').containerHasWinSize();
+    $('.intro').containerHasWinSize();
+    $('.sign-up').containerHasWinSize();
 
     resizeTimeout = setTimeout(function() {
         // handle after finished resize
@@ -145,150 +139,35 @@ function superSwapAttribute(thisEl) {
 // Fullscreen Images
 ///////////////////////////////////////////////////
 
+// function bgSizeIsWinSize() {
+//     var maxWidth = $(window).width();
+//     var maxHeight = $(window).height();
+//     $('.welcome, .intro, .sign-up').css({
+//         width: maxWidth,
+//         height: maxHeight
+//     });
+// }
+
+(function( $ ){
+    $.fn.containerHasWinSize = function() {
+        var maxWidth = $(window).width();
+        var maxHeight = $(window).height();
+        var mobileMaxHeight = maxHeight + 60;
+
+        if ($('html').hasClass('skrollr-mobile')){
+            $(this).css({
+                width: maxWidth,
+                height: mobileMaxHeight
+            });
+        } else{
+            $(this).css({
+                width: maxWidth,
+                height: maxHeight
+            });
+        }      
+   }; 
+})( jQuery );
+
 // Toggles
 ///////////////////////////////////////////////////
-
-// (function( $ ){
-//    $.fn.contSizeIsWinSize = function() {
-//         var maxWidth = $(window).width();
-//         var maxHeight = $(window).height();
-
-//         $(this).css({
-//             width: maxWidth,
-//             height: maxHeight
-//         });
-//    }; 
-// })( jQuery );
-
-
-// /*
-//     Fullscreen background is a small jQuery plugin that allows you to create fullscreen background.
-
-//     Author:     Gaya Kessler
-//     Date:       04-25-2012
-//     URL:        http://www.gayadesign.com
-// */
-
-// (function ($) {
-//     var parentElement = "";
-//     var optionsArr = {
-//         selector: "img",
-//         fillOnResize: true,
-//         defaultCss: true
-//     };
-
-//     $.fn.fullscreenBackground = function (options) {
-//         if(options) {
-//             $.extend(optionsArr, options );
-//         }
-
-//         this.each(function () {
-//             parentElement = this;
-
-//             if (optionsArr.defaultCss == true) {
-//                 $("html,body").css({
-//                     width: "100%",
-//                     height: "100%"
-//                 });
-
-//                 $(parentElement).css({
-//                     height: "100%",
-//                     width: "100%",
-//                     overflow: "hidden",
-//                     position: "fixed",
-//                     top: "0px",
-//                     left: "0px"
-//                     // left: "0px",
-//                     // zIndex: 1
-//                 });
-//             }
-
-//             if (optionsArr.fillOnResize == true) {
-//                 $(window).resize(function () {
-//                     if ($('body.desktop').length > 0){
-//                         fillBgDesktop(optionsArr.selector, parentElement);
-//                     } else{
-//                         fillBg(optionsArr.selector, parentElement);
-//                     }
-//                 });
-//             }
-
-//             if ($('body.desktop').length > 0){
-//                 fillBgDesktop(optionsArr.selector, parentElement);
-//             }   else{
-//                 fillBg(optionsArr.selector, parentElement);
-//             }
-//         });
-//     };
-
-//     function fillBg(selector, parentobj) {
-//         var windowHeight = $(window).height();
-//         var windowWidth = $(window).width();
-
-//         $(selector, parentobj).each(function () {
-//             var imgHeight = $(this).attr("height");
-//             var imgWidth = $(this).attr("width");
-
-//             var newWidth = windowWidth;
-//             var newHeight = (windowWidth / imgWidth) * imgHeight;
-//             var topMargin = ((newHeight - windowHeight) / 2) * -1;
-//             var leftMargin = 0;
-
-//             if (newHeight < windowHeight) {
-//                 var newWidth = (windowHeight / imgHeight) * imgWidth;
-//                 var newHeight = windowHeight;
-//                 var topMargin = 0;
-//                 var leftMargin = ((newWidth - windowWidth) / 2) * -1;
-//             }
-
-//             $(this).css({
-//                 height: newHeight + "px",
-//                 width: newWidth + "px",
-//                 marginLeft: leftMargin + "px",
-//                 marginTop: topMargin + "px",
-//                 display: "block"
-//             });
-//         });
-//     }
-//     function fillBgDesktop(selector, parentobj) {
-//         var windowHeight = $(window).height();
-//         var windowWidth = $(window).width();
-
-//         $(selector, parentobj).each(function () {
-//             var imgHeight = $(this).attr("data-resrc-height");
-//             var imgWidth = $(this).attr("data-resrc-width");
-
-//             var newWidth = windowWidth;
-//             var newHeight = (windowWidth / imgWidth) * imgHeight;
-//             var topMargin = ((newHeight - windowHeight) / 2) * -1;
-//             var leftMargin = 0;
-
-//             if (newHeight < windowHeight) {
-//                 var newWidth = (windowHeight / imgHeight) * imgWidth;
-//                 var newHeight = windowHeight;
-//                 var topMargin = 0;
-//                 var leftMargin = ((newWidth - windowWidth) / 2) * -1;
-//             }
-
-//             $(this).css({
-//                 height: newHeight + "px",
-//                 width: newWidth + "px",
-//                 marginLeft: leftMargin + "px",
-//                 marginTop: topMargin + "px",
-//                 display: "block"
-//             });
-//         });
-//     }
-// })(jQuery);
-
-
-
-
-
-
-
-
-
-
-
-
+;

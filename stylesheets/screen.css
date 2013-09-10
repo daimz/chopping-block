@@ -2318,11 +2318,6 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 :-ms-input-placeholder {
   color: #b3b3b3; }
 
-/* line 23, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
-html {
-  height: 100%;
-  width: 100%; }
-
 /* line 32, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
 footer {
   display: none; }
@@ -2351,7 +2346,7 @@ footer {
 /* line 53, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
 .welcome-bg {
   z-index: -2;
-  background: #01303d url("../images/background/apple-raspberry-crumble.jpg") no-repeat center center fixed;
+  background: #01303d url("../images/background/apple-raspberry-crumble.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2359,7 +2354,7 @@ footer {
   @media (min-width: 60em) {
     /* line 53, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
     .welcome-bg {
-      background: #01303d url("../images/background/apple-raspberry-crumble-middle.jpg") no-repeat center center fixed;
+      background: #01303d url("../images/background/apple-raspberry-crumble-middle.jpg") no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -2367,7 +2362,7 @@ footer {
   @media (min-width: 65.625em) {
     /* line 53, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
     .welcome-bg {
-      background: #01303d url("../images/background/apple-raspberry-crumble-large.jpg") no-repeat center center fixed;
+      background: #01303d url("../images/background/apple-raspberry-crumble-large.jpg") no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -2376,7 +2371,7 @@ footer {
 /* line 62, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
 .intro-bg {
   z-index: -3;
-  background: #01303d url("../images/background/pizza.jpg") no-repeat center center fixed;
+  background: #01303d url("../images/background/pizza.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2384,7 +2379,7 @@ footer {
   @media (min-width: 60em) {
     /* line 62, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
     .intro-bg {
-      background: #01303d url("../images/background/pizza-large.jpg") no-repeat center center fixed;
+      background: #01303d url("../images/background/pizza-large.jpg") no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -2392,7 +2387,7 @@ footer {
   @media (min-width: 65.625em) {
     /* line 62, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
     .intro-bg {
-      background: #01303d url("../images/background/pizza-large.jpg") no-repeat center center fixed;
+      background: #01303d url("../images/background/pizza-large.jpg") no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -2401,7 +2396,7 @@ footer {
 /* line 71, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
 .sign-up-bg {
   z-index: -4;
-  background: #01303d url("../images/background/italian-cheesecake.jpg") no-repeat center center fixed;
+  background: #01303d url("../images/background/italian-cheesecake.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2409,7 +2404,7 @@ footer {
   @media (min-width: 60em) {
     /* line 71, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
     .sign-up-bg {
-      background: #01303d url("../images/background/italian-cheesecake-middle.jpg") no-repeat center center fixed;
+      background: #01303d url("../images/background/italian-cheesecake-middle.jpg") no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -2417,7 +2412,7 @@ footer {
   @media (min-width: 65.625em) {
     /* line 71, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
     .sign-up-bg {
-      background: #01303d url("../images/background/italian-cheesecake-large.jpg") no-repeat center center fixed;
+      background: #01303d url("../images/background/italian-cheesecake-large.jpg") no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -2425,39 +2420,113 @@ footer {
 
 /* line 83, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
 .content .welcome, .content .intro, .content .sign-up {
-  position: relative; }
-
-/* line 94, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
-.logo {
-  display: block;
   position: relative;
-  top: 13%;
-  width: 78%;
-  height: 78%;
-  background: url("../svg/chopping-block-logo.svg") no-repeat top center;
+  padding: 0 6%; }
+
+/* line 99, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+.intro .message {
+  position: relative;
+  top: 2%;
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  background: transparent url("../svg/intro.svg") no-repeat top center;
   margin-left: auto;
   margin-right: auto;
   font: 0/0 serif;
   text-shadow: none;
   color: transparent; }
 
-/* line 110, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+/* line 112, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+.launching-soon {
+  display: block;
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #f1ede2;
+  margin: 12px auto 8px auto; }
+  /* line 120, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+  .launching-soon strong {
+    color: white; }
+
+/* line 124, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+.sign-up-btn {
+  display: block;
+  width: 90%;
+  height: 56px;
+  padding: 4px;
+  border: 2px solid #f1ede2;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 134, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+  .sign-up-btn span {
+    display: block;
+    height: 100%;
+    margin: 0;
+    background: #f1ede2 url("../images/sign-up.png") no-repeat center center;
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent; }
+
+/* line 145, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+.logo {
+  display: block;
+  position: relative;
+  top: 13%;
+  width: 80%;
+  height: 78%;
+  background: transparent url("../svg/chopping-block-logo.svg") no-repeat top center;
+  margin-left: auto;
+  margin-right: auto;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent; }
+
+/* line 163, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+.no-svg .intro .message {
+  width: 480px;
+  height: 366px;
+  background: transparent url("../images/intro.png") no-repeat top center; }
+/* line 169, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
 .no-svg .logo {
-  background: blue url("../images/chopping-block-logo@2x.png") no-repeat top center;
+  background: transparent url("../images/chopping-block-logo@2x.png") no-repeat top center;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain; }
 
-/* line 115, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
+/* line 175, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_base.scss */
 .scroll-down {
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 36px;
   left: 50%;
   margin-left: -32px;
-  background: url("../images/down.png") no-repeat bottom center; }
+  width: 64px;
+  height: 56px;
+  color: #f1ede2;
+  font-size: 14px;
+  background: transparent url("../images/down.png") no-repeat bottom center;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent; }
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */ }
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */ }
+/* iPhone 5 ----------- */
+@media screen and (device-width: 320px) and (device-height: 568px) {
+  /* line 26, /Users/Daimz/Sites/middleman/choppingblock/source/stylesheets/partials/_mobile.scss */
+  .welcome-bg, .intro-bg, .sign-up-bg {
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; } }
 @media print {
   /* line 11, /Users/Daimz/.rvm/gems/ruby-2.0.0-p0/gems/compass-h5bp-0.1.1/stylesheets/h5bp/_media.scss */
   * {
